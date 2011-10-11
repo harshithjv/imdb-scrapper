@@ -18,7 +18,7 @@ def removeHtmlReservedCharacters(html_string):
 #from imdb_grabber import removeHtmlReservedCharacters as rhrc
 
 def setIMDBEpisodeListLink(imdb_title_id):
-    return "http://www.imdb.com/title/" + series_title_id + "/episodes"
+    return "http://www.imdb.com/title/" + imdb_title_id + "/episodes"
     
 def grabIMDBEpisodeList(imdb_title_id):
 	tds = None
@@ -32,7 +32,7 @@ def grabIMDBEpisodeList(imdb_title_id):
 	    series = soup.find("div", { "id" : "tn15title"})
 	    series = series.find("a")
 	    series_name = series.find(text=True)
-	    print "tt"
+
 	    #grab all <td> with valign attribute set to top
 	    tds = soup.findAll("td" , { "valign" : "top"})
 	except urllib2.HTTPError:
@@ -93,8 +93,8 @@ def grabIMDBEpisodeList(imdb_title_id):
 
 def main():
     grabIMDBEpisodeList("tt0903747") #Breaking bad...
-    grabIMDBEpisodeList("tt1405406") #vampire diaries...
-    grabIMDBEpisodeList("tt0898266") #Big bang theory...
+    #grabIMDBEpisodeList("tt1405406") #vampire diaries...
+    #grabIMDBEpisodeList("tt0898266") #Big bang theory...
     
     
 
