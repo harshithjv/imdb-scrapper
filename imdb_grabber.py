@@ -21,6 +21,7 @@ def setIMDBEpisodeListLink(imdb_title_id):
     return "http://www.imdb.com/title/" + imdb_title_id + "/episodes"
     
 def grabIMDBEpisodeList(imdb_title_id):
+	series_dict = {}
 	tds = None
 	series_name = None
 	try:
@@ -44,6 +45,8 @@ def grabIMDBEpisodeList(imdb_title_id):
 	except Exception:
 	    return 0
 
+	series_dict["title"] = removeHtmlReservedCharacters(series_name)
+	series_dict["episodes"] = []
 	for td in tds:
 		imdb_link = ''
 		season_info = ''
@@ -81,20 +84,30 @@ def grabIMDBEpisodeList(imdb_title_id):
 		    desc = None
 
 		if season_head:
-			print "\n\ntitle: ", title
-			print "air date: ", air_date
-			print "season no: ", season_no
-			print "episode no: ", episode_no
-			print "episode link: ", imdb_link
-			print "episode description: ", desc
+			episode = {}
+			episode["title"] = title
+			episode["air_date"] = air_date
+			episode["season_no"] = season_no
+			episode["episode_no"] = episode_no
+			episode["imdb_link"] = imdb_link
+			episode["desc"] = desc
+			series_dict["episodes"].append(episode)
+			
+			#print "\n\ntitle: ", title
+			#print "air date: ", air_date
+			#print "season no: ", season_no
+			#print "episode no: ", episode_no
+			#print "episode link: ", imdb_link
+			#print "episode description: ", desc
 
 	print "Series Name: ", removeHtmlReservedCharacters(series_name)
-	#return 0
+	return series_dict
 
 def main():
-    grabIMDBEpisodeList("tt0903747") #Breaking bad...
-    #grabIMDBEpisodeList("tt1405406") #vampire diaries...
-    #grabIMDBEpisodeList("tt0898266") #Big bang theory...
+    #ep_list = grabIMDBEpisodeList("tt0903747") #Breaking bad...
+    #ep_list = grabIMDBEpisodeList("tt1405406") #vampire diaries...
+    ep_list = grabIMDBEpisodeList("tt0898266") #Big bang theory...
+    print "Total episodes: ", len(ep_list["episodes"])
     
     
 
