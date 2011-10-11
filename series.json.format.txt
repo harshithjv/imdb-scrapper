@@ -1,0 +1,15 @@
+{
+	"title" : "<series_name>",
+	"season" : [
+					{	"no" : "<season_no>",
+						"episodes" : [
+											{"no" : "<episode_no>",
+											"title" : "<episode_name>",
+											"air_date" : "<original_air_date>",
+											"imdb_link" : "<imdb_episode_url>",
+											"description" : "<episode_description>"}
+										
+									]
+					}
+			]
+}
