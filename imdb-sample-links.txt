@@ -1,0 +1,22 @@
+Breaking bad : 
+
+http://www.imdb.com/title/tt0903747/
+
+Big bang theory:
+http://www.imdb.com/title/tt0898266/
+
+
+List all movies:
+(feature films)
+http://www.imdb.com/search/title?lists=!watchlist&start=1&title_type=feature
+
+(feature films and tv films)
+http://www.imdb.com/search/title?lists=!watchlist&start=1&title_type=feature,tv_movie
+
+(feature films,tv films and tv series)
+http://www.imdb.com/search/title?lists=!watchlist&start=1&title_type=feature,tv_movie,tv_series
+
+(sort queries)
+sort=alpha <- A-Z
+sort=user_rating <- ratings
+
