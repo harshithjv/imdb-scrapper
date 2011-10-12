@@ -13,3 +13,48 @@
 					}
 			]
 }
+
+
+
+
+sample run in ipython:
+
+In [1]: series = {}
+
+In [2]: series["title"] = "Vampire Diaries"
+
+In [3]: series
+Out[3]: {'title': 'Vampire Diaries'}
+
+In [7]: series["seasons"] = []
+
+In [8]: series
+Out[8]: {'seasons': [], 'title': 'Vampire Diaries'}
+
+In [9]: episodes = []
+
+In [10]: episode_1_info = {"no" : "<episode_no>","title" : "<episode_name>","air_date" : "<original_air_date>","imdb_link" : "<imdb_episode_url>","description" : "<episode_description>"}
+
+In [11]: episodes.append(episode_1_info)
+
+In [12]: episodes
+Out[12]: 
+[{'air_date': '<original_air_date>',
+  'description': '<episode_description>',
+  'imdb_link': '<imdb_episode_url>',
+  'no': '<episode_no>',
+  'title': '<episode_name>'}]
+
+In [15]: series["seasons"].append({ "no" : "1", "episodes" : episodes})
+
+In [16]: series
+Out[16]: 
+{'seasons': [{'episodes': [{'air_date': '<original_air_date>',
+                            'description': '<episode_description>',
+                            'imdb_link': '<imdb_episode_url>',
+                            'no': '<episode_no>',
+                            'title': '<episode_name>'}],
+              'no': '1'}],
+ 'title': 'Vampire Diaries'}
+
+
